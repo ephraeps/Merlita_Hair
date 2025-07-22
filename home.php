@@ -47,20 +47,14 @@ $slideCount = count($slides);
       <div class="descr_about">
         <img class="img_about" src="images/logo_merlitahair.JPG" alt="logo_merlita">
         <p>Merlita existe pour un réel but : Ne plus détruire ses cheveux, 
-          <br/>notre rêve a toujours été de rendre la vie capillaire de nos clients meilleures en les permettant d'avoir des produits de première qualité afin de pouvoir transformer le quotidien de chacun
-          <br/>daidiia zvidvjzui  ziu di fdeuui  uin du nusifdn ui nui nu nuinununsi n unnusuivdzn ui n nunuivniun iun  unununun uububububu yuuy uuu_è buè_ uhuuzufnvunuh içb nubuç zu_ç
-          <br/>paveze ze o ao a jie keo  oieakvvievj okvezkvi ,ivz,i ,ai, a jen ken  eei enc,icie,c inii,,a  akc,ciin,cia,cneeconcacicnc
-          cnicnccoanconioac
-          enaineiacnonve
-          je ne peux que dire bravo 
-          apres si tu peux le faire 
-          ca serait dommage quand meme 
-          je e=ne pecxhx 
+          <br/>notre rêve a toujours été test test test test test test testtest test vvtest test vtest test test testtest test
+          <br/>notre rêve a toujours été test test test test test test testtest test vvtest test vtest test test testtest test
+          <br/>notre rêve a toujours été test test test test test test testtest test vvtest test vtest test test testtest testnotre rêve a toujours été test test test test test test testtest test vvtest test vtest test test testtest testnotre rêve a toujours été test test test test test test testtest 
+          test vvtest test vtest test test testtest test
         </p>
       </div>  
 
   </div>
-
 
   <footer>
     <?php include('footer.php') ?>
