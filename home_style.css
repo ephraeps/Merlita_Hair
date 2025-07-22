@@ -1,0 +1,199 @@
+body {
+    background-color: black;
+    color: #dfd085;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+}
+
+/*Effet page active*/
+body.page-home .nav-link[href="home.php"] {
+    background-color: rgba(223, 208, 133, 0.3);
+    color: yellow;
+    font-weight: bold;
+    border-bottom: 2px solid yellow;
+}
+.page-home{
+    margin-top: 230px;
+}
+
+/* Slider Container */
+.slider {
+    width: 100%;
+    height: 500px; /* Ajustez selon vos besoins */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slides de base */
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Animation Keyframes */
+@keyframes slideFade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    25% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Configuration de l'animation pour chaque slide */
+.slide {
+    animation: slideFade linear infinite;
+    animation-duration: calc(5s * var(--total-slides));
+    animation-delay: calc(5s * var(--delay));
+}
+
+/* Initialisation des variables CSS */
+.slider {
+    --total-slides: <?= $slideCount ?? 3 ?>; /* Fallback de 3 si PHP non interprété */
+}
+
+
+/* home_style.css */
+.slide-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2em;
+}
+
+.banner_terms {
+  text-align: center;
+  margin: 30px 0;
+  font-family: 'Dancing Script', 'cursive';
+  font-size: 2em;
+  color: #dfd085;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.banner_container2 {          
+  margin: 30px 0;
+}
+
+.banner_text2 a {
+  background: #333;    
+  color: #dfd085;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  width: auto;
+  margin-left: 45%;
+}
+
+.banner_text2 a:hover {
+  background: #555;
+}
+  :root {
+      --total-slides: <?= $slideCount ?>;
+      --slide-duration: 5s;
+    }
+    
+    .slider-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+      height: 500px;
+      border: 1px solid #dfd085;
+      border-radius: 4%;
+    }
+    
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+.products_types_container{
+  display: flex;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+
+
+}
+.tabout{
+  font-weight: bold;
+  display: column;
+  align-items: center;
+
+}
+.img_about{
+  width: 595px;
+  height: 430px;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 21px;
+  margin: 10px;
+  flex: 1;
+}
+.descr_about{
+  display: flex;
+  align-items: center;
+} 
+
+/* Slides */
+ @keyframes slideFade
+        0% { 
+          opacity: 0; 
+          visibility: hidden; /* Ajout pour un départ plus net */
+        }
+        5% { 
+          opacity: 1; /* Montée rapide en opacité */
+          visibility: visible;
+        }
+        20% { 
+          opacity: 1; /* Maintien à pleine opacité */
+        }
+        25% { 
+          opacity: 0; /* Descente rapide */
+          visibility: hidden;
+        }
+        100% { 
+          opacity: 0;
+        }
