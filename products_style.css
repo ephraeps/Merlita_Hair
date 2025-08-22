@@ -252,3 +252,45 @@ summary{
 .errors p {
     margin: 5px 0;
 }
+
+/* Version tablette */
+@media (max-width: 768px) {
+    .mprnt_products,
+    .muprnt_products {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .img_product {
+        height: 150px;
+    }
+}
+
+/* Version mobile */
+@media (max-width: 480px) {
+    body{
+        margin-top: 50px;
+    }
+    body.page-products {
+        padding: 0;
+    }
+
+    .mprnt_products,
+    .muprnt_products {
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+        padding: 0.5rem;
+    }
+
+    .product_card {
+        border-radius: 8px;
+    }
+
+    .product_title {
+        font-size: 0.95rem;
+    }
+
+    .product_price {
+        font-size: 0.9rem;
+    }
+}
