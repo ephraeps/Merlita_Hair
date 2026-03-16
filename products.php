@@ -2,16 +2,15 @@
 require('check_auth.php');
 require('connexion.php'); 
 
-// Checking the user
-$userId = $_SESSION['user_id'] ?? null; 
-
-if ($userId) {
-    $userQuery = $db->prepare("SELECT city FROM users WHERE id = ?");
-    $userQuery->execute([$userId]);
-    $user = $userQuery->fetch(PDO::FETCH_ASSOC); // Array
-} else {
-    die("Utilisateur non connecté");
+// Retrieve logged-in user record (to get `city` etc.)
+$user = null;
+$user_id = $_SESSION['user_id'] ?? null;
+if ($user_id) {
+  $stmt = $db->prepare("SELECT * FROM users WHERE id = ?");
+  $stmt->execute([$user_id]);
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
 }
+
 
 // Requeries for products
 $mprnt = $db->prepare("SELECT * FROM products_matadi ORDER BY add_at DESC");
@@ -23,7 +22,8 @@ $mbprnt->execute();
 $kprnt = $db->prepare("SELECT * FROM products_kinshasa ORDER BY add_at DESC");
 $kprnt->execute();
 
-$muprnt = $db->prepare("SELECT * FROM products_moanda ORDER BY add_at DESC");
+$kiprnt = $db->prepare("SELECT * FROM products_kisantu ORDER BY add_at DESC");
+$kiprnt->execute();
 
 // Look through images
 function resolveProductImage($productId) {
@@ -42,24 +42,23 @@ function resolveProductImage($productId) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="global_style.css">
   <link rel="stylesheet" href="products_style.css">
   <title>Produits - Merlita_Hair</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <?php include('header.php');?>
 </head>
 <body class="page-products">
-  <?php include('header.php');
-  // PRODUCTS PRINTING
-  ?>
 
-  <?php if ($user && isset($user['city'])): ?>
+  <?php if ($user && isset($user['city'])): 
+    // PRODUCTS PRINTING?>
+ 
     <!-- Matadi -->
     <?php if ($user['city'] == 'matadi'): ?>
       <div class="mprnt_products">
         <?php foreach($mprnt->fetchAll(PDO::FETCH_ASSOC) as $mproduct): ?>
           <a href="product_detail.php?id=<?= $mproduct['id'] ?>&city=matadi" class="product_link">  
             <div class="product_card">
-              <img class="img_product" src="<?= $mproduct['image'] ?>" alt="image_product">
+              <img class="img_product" src="<?= $mproduct['image'] ?>" alt="Image_non_disponible">
               <div class="product_details">
                 <h3 class="product_title"><?= htmlspecialchars($mproduct['name']) ?></h3>
                 <span class="product_price"><?= htmlspecialchars($mproduct['price']) ?> FC</span>
@@ -75,7 +74,7 @@ function resolveProductImage($productId) {
         <?php foreach($mbprnt->fetchAll(PDO::FETCH_ASSOC) as $mbproduct): ?>
           <a href="product_detail.php?id=<?= $mbproduct['id'] ?>&city=mbanzangungu" class="product_link">  
             <div class="product_card">
-              <img class="img_product" src="<?= resolveProductImage($mbproduct['id']) ?>" alt="image_product">
+              <img class="img_product" src="<?= $mbproduct['image'] ?>" alt="image_product">
               <div class="product_details">
                 <h3 class="product_title"><?= htmlspecialchars($mbproduct['name']) ?></h3>
                 <span class="product_price"><?= htmlspecialchars($mbproduct['price']) ?> FC</span>
@@ -91,7 +90,7 @@ function resolveProductImage($productId) {
         <?php foreach($kprnt->fetchAll(PDO::FETCH_ASSOC) as $kproduct): ?>
           <a href="product_detail.php?id=<?= $kproduct['id'] ?>&city=kinshasa" class="product_link">  
             <div class="product_card">
-              <img class="img_product" src="<?= resolveProductImage($kproduct['id']) ?>" alt="image_product">
+              <img class="img_product" src="<?= $kproduct['image'] ?>" alt="image_product">
               <div class="product_details">
                 <h3 class="product_title"><?= htmlspecialchars($kproduct['name']) ?></h3>
                 <span class="product_price"><?= htmlspecialchars($kproduct['price']) ?> FC</span>
@@ -100,32 +99,70 @@ function resolveProductImage($productId) {
           </a>
         <?php endforeach; ?>
       </div>
-    <!-- moanda -->
-     <?php elseif ($user['city'] == 'moanda'): ?>
-        <div class="muprnt_products">
-          <?php foreach($kprnt->fetchAll(PDO::FETCH_ASSOC) as $kproduct): ?>
-            <a href="product_detail.php?id=<?= $kproduct['id'] ?>&city=kinshasa" class="product_link">  
+    <!-- kisantu -->
+     <?php elseif ($user['city'] == 'kisantu'): ?>
+        <div class="kiprnt_products">
+          <?php foreach($kiprnt->fetchAll(PDO::FETCH_ASSOC) as $moproduct): ?>
+            <a href="product_detail.php?id=<?= $moproduct['id'] ?>&city=kisantu" class="product_link">  
               <div class="product_card">
-                <img class="img_product" src="<?= resolveProductImage($kproduct['id']) ?>" alt="image_product">
+                <img class="img_product" src="<?= $moproduct['image'] ?>" alt="image_product">
                 <div class="product_details">
-                  <h3 class="product_title"><?= htmlspecialchars($kproduct['name']) ?></h3>
-                  <span class="product_price"><?= htmlspecialchars($kproduct['price']) ?> FC</span>
+                  <h3 class="product_title"><?= htmlspecialchars($moproduct['name']) ?></h3>
+                  <span class="product_price"><?= htmlspecialchars($moproduct['price']) ?> FC</span>
                 </div>
               </div>  
             </a>
           <?php endforeach; ?>
        </div>
 
+       <!-- If user is not connected -->
+        <!-- Print products from matadi and notice the user that those prices are for matadi customers-->
+      <?php if ($user['city'] == 'null'): ?>
+        <div class="mprnt_products">
+          <p>Les prix affichés sont pour les clients de la ville de Matadi.Veuillez-vous connecter pour avoir des prix précis. </p>
+          <?php foreach($mprnt->fetchAll(PDO::FETCH_ASSOC) as $mproduct): ?>
+            <a href="product_detail.php?id=<?= $mproduct['id'] ?>&city=matadi" class="product_link">  
+              <div class="product_card">
+                <img class="img_product" src="<?= $mproduct['image'] ?>" alt="image_product">
+                <div class="product_details">
+                  <h3 class="product_title"><?= htmlspecialchars($mproduct['name']) ?></h3>
+                  <span class="product_price"><?= htmlspecialchars($mproduct['price']) ?> FC</span>
+                </div>
+              </div>  
+            </a>
+          <?php endforeach; ?>
+          
+        </div> 
+      <?php endif; ?>
+
+
 
 
     <?php else: ?>
-      <p>Aucun produit disponible pour votre ville (<?= htmlspecialchars($user['city']) ?>).</p>
-    <?php endif; ?>
+      <p>Ville non reconnue. Veuillez mettre à jour votre profil.</p>
+  <?php endif; ?>
 
-  <?php else: ?>
-    <p>Ville inconnue ou utilisateur non connecté.</p>
+  
+
+  <?php endif; ?>
+
+  <?php if (!$user): ?>
+            <div class="mprnt_products">
+              <p class="not_user_head">Les prix affichés sont pour les clients de Matadi. Veuillez-vous connecter pour avoir des prix précis.</p>
+              <?php foreach($mprnt->fetchAll(PDO::FETCH_ASSOC) as $mproduct): ?>
+                <a href="product_detail.php?id=<?= $mproduct['id'] ?>&city=matadi" class="product_link">  
+                  <div class="product_card">
+                    <img class="img_product" src="<?= $mproduct['image'] ?>" alt="image_product">
+                    <div class="product_details">
+                      <h3 class="product_title"><?= htmlspecialchars($mproduct['name']) ?></h3>
+                      <span class="product_price"><?= htmlspecialchars($mproduct['price']) ?> FC</span>
+                    </div>
+                  </div>  
+                </a>
+              <?php endforeach; ?>
+          </div>
   <?php endif; ?>
 
   <?php include('footer.php'); ?>
 </body>
-</html>
+</html>  
