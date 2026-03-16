@@ -33,8 +33,8 @@ switch($city) {
     case 'kinshasa':
         $table_name = 'products_kinshasa';
         break;
-    case 'moanda':
-        $table_name = 'products_moanda';
+    case 'kisantu':
+        $table_name = 'products_kisantu';
         break;    
     default:
         header('Location: products.php');
@@ -122,7 +122,7 @@ include('header.php');
             <div class="form-group">
                 <label for="comment_image">Ajouter une photo (optionnel) :</label>
                 <input type="file" name="comment_image" id="comment_image" accept="image/*">
-                <small>Formats acceptés: JPG, PNG (max 2MB)</small>
+                <small>Formats acceptés: JPG, PNG (max 15MB)</small>
             </div>
             
         </form>
