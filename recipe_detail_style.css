@@ -1,0 +1,220 @@
+/* Style de base pour la page de détail */
+.recipe-detail-page {
+    background-color: #000;
+    color: #333;
+    line-height: 1.6;
+}
+
+.recipe-detail-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #6d4c41;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}   
+
+.recipe-detail-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.recipe-detail-header h1 {
+    color: #6d4c41;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-category {
+    display: inline-block;
+    background: #f5e9e0;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #6d4c41;
+}
+
+.recipe-detail-content section {
+    margin-bottom: 2rem;
+}
+
+.recipe-detail-content h2 {
+    color: #6d4c41;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Style pour les liens dans le contenu */
+.recipe-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.recipe-link:hover .recipe_card {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Style général des commentaires */
+.recipe_comments {
+    margin-top: 40px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.recipe_comments h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Formulaire de commentaire */
+.comment-form {
+    margin-bottom: 30px;
+}
+
+.comment-form .comment_area {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    min-height: 100px;
+    margin-bottom: 15px;
+    font-family: inherit;
+    resize: vertical;
+    transition: border 0.3s;
+}
+
+.comment-form .comment_area:focus {
+    border-color: #6c757d;
+    outline: none;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+}
+
+.comment-form input[type="file"] {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.comment-form .comment_btn {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.comment-form .comment_btn:hover {
+    background-color: #5a6268;
+}
+
+/* Liste des commentaires */
+.comments-list {
+    margin-top: 20px;
+}
+
+.comment {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-header strong {
+    color: #343a40;
+    font-weight: 600;
+}
+
+.comment-header small {
+    color: #6c757d;
+    font-size: 0.85em;
+}
+
+.comment-body {
+    margin-bottom: 15px;
+    color: #495057;
+    line-height: 1.5;
+}
+
+.comment-image {
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+}
+
+.comment-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.comment-image img:hover {
+    transform: scale(1.02);
+}
+
+.comment-actions {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.comment-actions a {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.comment-actions a:hover {
+    background-color: #f8d7da;
+    text-decoration: underline;
+}
+
+.no-comments {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+    padding: 20px;
+}

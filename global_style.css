@@ -1,0 +1,579 @@
+body{
+    background-color: black;
+    color: #dfd085;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    padding-top: 115px;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Loader */
+.loader {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeOut 3s ease-in-out forwards;
+}
+
+.loader img {
+    width: 150px;
+    animation: zoomOut 3s ease-in-out;
+}
+
+@keyframes zoomOut {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+.create_user-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    max-width: 100%;
+}
+/* Admin page */
+.admin-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #cd9811;
+    box-shadow: 0 0 5px rgba(205, 152, 17, 0.3);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.success { background-color: #dff0d8; color: #3c763d; }
+.error { background-color: #f2dede; color: #a94442; }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+
+
+.users-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th, .users-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.users-table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.users-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* ===================== */
+/* Authentication Styles */
+/* ===================== */
+
+.auth-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 30px 20px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border: rgb(205, 201, 19) solid 2px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.auth-title {
+    color: #dfd085;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.auth-container .form-group {
+    width: 100%;
+}
+
+.auth-container .form-group label {
+    color: #dfd085;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.auth-container .form-group input,
+.auth-container .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: white;
+    color: #333;
+}
+
+.auth-btn {
+    background-color: #cd9811;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.auth-btn:hover {
+    background-color: #e6b110;
+}
+
+.auth-btn:active {
+    background-color: #b8860b;
+}
+
+.auth-link {
+    color: #dfd085;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #cd9811;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+    color: #e6b110;
+}
+
+.errors {
+    background-color: #f2dede;
+    color: #a94442;
+    padding: 12px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ebcccc;
+}
+
+.errors p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #cd9811;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+}
+
+.checkbox-label {
+    color: #dfd085;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    cursor: pointer;
+    display: inline;
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+    outline: 2px solid #cd9811;
+}
+
+.confirmation-text {
+    color: #dfd085;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Tablette */
+@media screen and (max-width: 1024px) {
+    body {
+        font-size: 16px;
+        padding-top: 100px;
+    }
+
+    .container, .profile-container {
+        padding: 15px;
+    }
+
+    .admin-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .auth-container {
+        max-width: 450px;
+        padding: 25px 20px;
+    }
+}
+
+/* Small Tablet / Large Mobile */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 15px;
+        padding-top: 80px;
+    }
+
+    .container, .profile-container {
+        padding: 12px;
+    }
+
+    .admin-container {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    /* Global images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Buttons */
+    button, .edit-btn {
+        width: 100%;
+        padding: 12px;
+        margin-top: 8px;
+        font-size: 15px;
+    }
+
+
+    .create_user-logo {
+        width: 120px;
+        margin-bottom: 15px;
+    }
+
+    .auth-container {
+        max-width: 100%;
+        margin: 15px;
+        padding: 20px 15px;
+    }
+
+    .auth-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .auth-btn {
+        font-size: 15px;
+        padding: 12px 15px;
+    }
+
+    .errors {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .errors p {
+        margin: 4px 0;
+    }
+
+    .auth-link {
+        font-size: 13px;
+    }
+
+    .checkbox-group {
+        margin-bottom: 15px;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+    }
+
+    .checkbox-label {
+        font-size: 13px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 6px 4px;
+    }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 13px;
+        padding-top: 60px;
+        margin: 0;
+    }
+
+    .container, .profile-container {
+        padding: 10px;
+        margin: 0;
+    }
+
+    .admin-container {
+        max-width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        margin: 10px 0;
+    }
+
+    h2, h3 {
+        font-size: 1.1rem;
+        margin: 8px 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Buttons */
+    button, .edit-btn {
+        width: 100%;
+        padding: 10px;
+        margin-top: 8px;
+        font-size: 14px;
+    }
+
+
+    .create_user-logo {
+        width: 100px;
+        margin-bottom: 12px;
+    }
+
+    .auth-container {
+        max-width: 100%;
+        margin: 10px;
+        padding: 15px 12px;
+        gap: 15px;
+        border-radius: 10px;
+    }
+
+    .auth-title {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 13px;
+        margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 14px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .auth-btn {
+        font-size: 14px;
+        padding: 11px 12px;
+        width: 100%;
+    }
+
+    .errors {
+        font-size: 12px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .errors p {
+        margin: 3px 0;
+    }
+
+    .auth-link {
+        font-size: 12px;
+        margin-top: 8px;
+    }
+
+    .checkbox-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .checkbox-group input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        margin: 0;
+    }
+
+    .checkbox-label {
+        font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th, td {
+        padding: 5px 3px;
+    }
+
+    .users-table th, .users-table td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+}
+
+

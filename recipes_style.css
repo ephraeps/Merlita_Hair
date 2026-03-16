@@ -1,0 +1,137 @@
+/* Reset spécifique pour la page */
+body{
+    margin-top: 100px;
+    background-color: black;
+    color: #dfd085;
+
+}
+.recipes_page {
+    margin-top: 100px;
+    padding: 0;
+}
+
+
+.recipes-container {
+    max-width: 1200px;
+    margin-top: 40vh auto;
+    padding: 0 15px;
+    font-size: 20px;
+}
+
+
+
+.recipe-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: space-between;
+    gap: 10px;
+    margin: 30px 0;
+
+}
+
+.recipe-header img {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+}
+
+.recipe-header h1 {
+    align-items: center;
+    color: #dfd085;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.head_recipe{
+    display: table-row;
+    justify-content: center;
+    text-align: center;
+}
+
+.recipe-content {
+    line-height: 1.6;
+    padding: 20px 0;
+}
+.recipe_desc {
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+.recipe_card{
+    border-bottom: solid 1px #dfd085;
+}
+.recipe_card a{
+    color: white;
+    justify-content: right;
+
+}
+.recipe_category{
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    gap: 10px;
+    margin-bottom: 20px;
+    border: solid 1px #dfd085;
+    border-radius: 15%;
+    background-color: bisque;
+
+}
+
+.comment-image {
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.comment-image img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.form-group small {
+    font-size: 0.8em;
+    color: #666;
+}
+/* Mini header catégorie */
+.mini-category-header {
+    margin: 20px 0 10px 0;
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+.mini-category-header span {
+    margin-right: 10px;
+    color: #8B4513;
+    font-weight: bold;
+}
+.category-filter {
+    display: inline-block;
+    margin: 0 6px;
+    padding: 4px 12px;
+    background: #dfd085;
+    color: #333;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+.category-filter:hover,
+.category-filter.active {
+    background: #8B4513;
+    color: #fff;
+}
+.category-filter.reset {
+    background: #eee;
+    color: #8B4513;
+    font-weight: bold;
+}

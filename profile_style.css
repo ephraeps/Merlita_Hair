@@ -1,0 +1,219 @@
+/* profile_style.css */
+body {
+    background-color: black;
+    color: #dfd085;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.profile-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.profile-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #dfd085;
+    border-bottom: 1px solid #dfd085;
+    padding-bottom: 15px;
+}
+
+.profile-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #dfd085;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 15px rgba(223, 208, 133, 0.1);
+}
+
+.info-group {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(223, 208, 133, 0.3);
+}
+
+.info-group:last-child {
+    border-bottom: none;
+}
+
+.info-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #dfd085;
+    font-size: 1.1rem;
+}
+
+.info-group p {
+    margin: 0;
+    padding: 8px 15px;
+    background-color: rgba(223, 208, 133, 0.1);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.edit-btn {
+    display: inline-block;
+    background-color: #dfd085;
+    color: black;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.5rem;
+    
+}
+
+.edit-btn:hover {
+    background-color: yellow;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(223, 208, 133, 0.3);
+}
+
+.profile-orders {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid #dfd085;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.profile-orders h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #dfd085;
+}
+.logout-section .logout-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    margin: 50px;
+    border: solid orange 2px;
+    border-radius: 30px;
+    background-color: orange;
+    text-align: center;
+    color: black; 
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
+.profile-form{
+    display: grid;
+    align-items: center;
+    justify-content: center; 
+}
+/*Effet page active*/
+body.page-profile .nav-link[href="profile.php"] {
+    background-color: rgba(223, 208, 133, 0.3);
+    color: yellow;
+    font-weight: bold;
+    border-bottom: 2px solid yellow;
+}
+.orders-history{
+    display: flex;
+    justify-content: center;
+    border: solid 3px #dfd085;
+    border-radius: 15px;
+    .torders{
+        border-bottom: solid 1px #dfd085;
+    }
+}
+
+.edit-form {
+    display: inline-block;
+    margin-left: 10px;
+}
+.edit-form input, .edit-form select {
+    padding: 5px;
+    margin-right: 5px;
+}
+.edit-btn {
+    color: #0066cc;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+.edit-btn:hover {
+    text-decoration: underline;
+}
+.alert {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+}
+.error {
+    background-color: #f2dede;
+    color: #a94442;
+}
+
+.delete-account-section .delete-account-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    width: 150px;
+    height: 35px;
+    background-color: red;
+    color: #dff0d8;
+    text-align: center;
+    font-weight: bold;
+
+}        
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 15px;
+    }
+    
+    .profile-info, .profile-orders {
+        padding: 20px;
+    }
+    
+    .profile-container h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-orders h2 {
+        font-size: 1.5rem;
+    }
+   .edit-btn{
+        width: 80px;
+        text-align: center;
+   }
+   .edit-btn a{
+    width: 100%;
+   }
+}
+/* Responsive Design for very small screens */
+@media (max-width: 480px) {
+    .info-group label {
+        font-size: 1rem;
+        width: 50%;
+    }
+    
+    .info-group p {
+        font-size: 0.9rem;
+    }
+    
+    .edit-btn {
+        width: 80px;
+        text-align: center;
+    }
+}
