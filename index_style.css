@@ -1,13 +1,11 @@
 body {
-    background-color: black;
-    color: #dfd085;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-
-}
+  background-color: black;
+  color: #dfd085;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+} 
 
 /*Effet page active*/
 body.page-home .nav-link[href="home.php"] {
@@ -23,7 +21,7 @@ body.page-home .nav-link[href="home.php"] {
 /* Slider Container */
 .slider {
     width: 100%;
-    height: 500px; /* Ajustez selon vos besoins */
+    height: 300px; /* Ajustez selon vos besoins */
     position: relative;
     overflow: hidden;
 }
@@ -46,14 +44,6 @@ body.page-home .nav-link[href="home.php"] {
     object-position: center;
 }
 
-/* Animation Keyframes */
-@keyframes slideFade {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    25% { opacity: 1; }
-    35% { opacity: 0; }
-    100% { opacity: 0; }
-}
 
 /* Configuration de l'animation pour chaque slide */
 .slide {
@@ -96,7 +86,7 @@ body.page-home .nav-link[href="home.php"] {
   margin: 30px 0;
 }
 
-.banner_text2 a {
+.banner_text a {
   background: #333;    
   color: #dfd085;
   text-decoration: none;
@@ -106,7 +96,7 @@ body.page-home .nav-link[href="home.php"] {
   margin-left: 45%;
 }
 
-.banner_text2 a:hover {
+.banner_text a:hover {
   background: #555;
 }
   :root {
@@ -168,41 +158,19 @@ body.page-home .nav-link[href="home.php"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 21px;
-  margin: 10px;
+  font-size: 19px;
+  padding: 20px;
   flex: 1;
+  font-family: 'Times New Roman', Times, serif;
 }
-.descr_about{
-  display: flex;
-  align-items: center;
-} 
 
-/* Slides */
-@keyframes slideFade {
-        0% { 
-          opacity: 0; 
-          visibility: hidden; /* Ajout pour un départ plus net */
-        }
-        5% { 
-          opacity: 1; /* Montée rapide en opacité */
-          visibility: visible;
-        }
-        20% { 
-          opacity: 1; /* Maintien à pleine opacité */
-        }
-        25% { 
-          opacity: 0; /* Descente rapide */
-          visibility: hidden;
-        }
-        100% { 
-          opacity: 0;
-        }
-    }
 
+   
     
 /* Responsive MOBILE */
 @media (max-width: 768px) {
-  .descr_about {
+ 
+  .title_about {
     flex-direction: column !important;
     align-items: center !important;
   }
@@ -211,7 +179,7 @@ body.page-home .nav-link[href="home.php"] {
     width: 90vw;
     max-width: 320px;
   }
-  .descr_about h3 {
+  .title_about h3 {
     text-align: center;
     font-size: 1.1em;
   }
@@ -219,13 +187,28 @@ body.page-home .nav-link[href="home.php"] {
     width: 100%;
     height: auto;
   }
-  .about{
+  .descr_about{
+    display: flex;
+    flex-direction: column;
+    font-family: 'arial', sans-serif;
+    align-items: center;
+    font-size: 21px;
+    padding: 20px;
+    flex: 1;
+  }
+  .banner_terms{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 21px;
-    margin: 10px;
-    flex: 1;
+
   }
+  .banner_text {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    margin-right: 115px;
+  }
+
 
 }
