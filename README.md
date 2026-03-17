@@ -1,4 +1,4 @@
-#Merlita_Hair
+Merlita_Hair
 
 Hi ! take a look accros the differents files of this website and tell what you think about it , it would be a pleasure to have your feedback. 
 
