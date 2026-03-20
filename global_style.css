@@ -45,6 +45,7 @@ body{
 }
 /* Admin page */
 .admin-container {
+    color: #000;
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
@@ -338,6 +339,10 @@ th {
     }
 
     .admin-container {
+        max-width: 100%;
+        padding: 12px;
+    }
+    .users-container {
         max-width: 100%;
         padding: 12px;
     }
