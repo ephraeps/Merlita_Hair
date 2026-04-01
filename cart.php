@@ -1,5 +1,5 @@
 <?php
-require('connexion.php');
+
 require('check_auth.php');
 
 if (!isset($_SESSION['user_id'])) {
