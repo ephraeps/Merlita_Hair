@@ -1,5 +1,5 @@
 <?php
-require('connexion.php');
+
 
 $username = $email = $city = $address = $phone = $password = $confirm_password = '';
 $errors = [];
