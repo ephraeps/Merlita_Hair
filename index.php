@@ -1,6 +1,5 @@
 <?php 
-require('check_auth.php');
-require('connexion.php');
+
 
 // Recover all valid images ,
 $imgb = $db->prepare("SELECT image,name FROM slideshow WHERE image IS NOT NULL AND image != '' ORDER BY add_at DESC");
@@ -163,6 +162,7 @@ $username = $_SESSION['user_name'] ?? null;
     }
   </style>
 </head>
+
 <body class="page-home">  
   <div class="loader">
     <img src="logo_merlitahair.png" alt="logo_merlita_hair">
