@@ -1,18 +1,18 @@
 body {
-  background-color: black;
-  color: #dfd085;
+  background-color: #f5f1e8;
+  color: #1a1f35;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
-} 
+}
 
 /*Effet page active*/
 body.page-home .nav-link[href="home.php"] {
-    background-color: rgba(223, 208, 133, 0.3);
-    color: yellow;
+    background-color: rgba(201, 161, 122, 0.3);
+    color: #f5a623;
     font-weight: bold;
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid #c9a17a;
 }
 .page-home{
     margin-top: 230px;
@@ -64,8 +64,8 @@ body.page-home .nav-link[href="home.php"] {
   bottom: 20px;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.5);
-  color: white;
+  background: rgba(26, 31, 53, 0.8);
+  color: #f5f1e8;
   text-align: center;
   padding: 10px;
   font-size: 1.2em;
@@ -76,7 +76,7 @@ body.page-home .nav-link[href="home.php"] {
   margin: 30px 0;
   font-family: 'Dancing Script', 'cursive';
   font-size: 2em;
-  color: #dfd085;
+  color: #1a1f35;
   padding: 10px 20px;
   text-decoration: none;
   border-radius: 5px;
@@ -87,17 +87,22 @@ body.page-home .nav-link[href="home.php"] {
 }
 
 .banner_text a {
-  background: #333;    
-  color: #dfd085;
+  background: #1a1f35;    
+  color: #f5f1e8;
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.2em;
   width: auto;
   margin-left: 45%;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
 }
 
 .banner_text a:hover {
-  background: #555;
+  background: #2a2f45;
+  color: #f5a623;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(201, 161, 122, 0.2);
 }
   :root {
       --total-slides: <?= $slideCount ?>;
@@ -111,7 +116,7 @@ body.page-home .nav-link[href="home.php"] {
       overflow: hidden;
       position: relative;
       border-radius: 12px;
-      background: #222;
+      background: #1a1f35;
       height: 100%; /* Hauteur fixe pour le slider, adapte si besoin */
     }
     
@@ -162,6 +167,7 @@ body.page-home .nav-link[href="home.php"] {
   padding: 20px;
   flex: 1;
   font-family: 'Times New Roman', Times, serif;
+  color: #1a1f35;
 }
 
 
