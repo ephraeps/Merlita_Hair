@@ -1,5 +1,6 @@
 <?php 
-
+require('check_auth.php');
+require('connexion.php');
 
 // Recover all valid images ,
 $imgb = $db->prepare("SELECT image,name FROM slideshow WHERE image IS NOT NULL AND image != '' ORDER BY add_at DESC");
@@ -22,6 +23,9 @@ $username = $_SESSION['user_name'] ?? null;
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
  <?php include('header.php'); ?>
  <style>
+    html {
+      scroll-behavior: smooth;
+    }
         .slider-container {
           width: 100%;
           max-width: 600px;
@@ -162,7 +166,16 @@ $username = $_SESSION['user_name'] ?? null;
     }
   </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W30GEKWKHN"></script>
+<script>
+  // Google Analytics tracking code
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-W30GEKWKHN');
+</script>
 <body class="page-home">  
   <div class="loader">
     <img src="logo_merlitahair.png" alt="logo_merlita_hair">
