@@ -29,24 +29,12 @@ body {
 .nav-item{
     margin: 0 15px;
 }
-.nav-link {
-    color: #f5f1e8;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-.nav-link:hover {
-    background-color: rgba(201, 161, 122, 0.2);
-    color: #f5a623;
-    transform: translateY(-2px);
-}
+
 
 /*Effet page active*/
 body.page-products .nav-link[href="products.php"] {
     background-color: rgba(201, 161, 122, 0.3);
-    color: #1a1f35;
+    color: #f5a623;
     font-weight: bold;
     border-bottom: 2px solid #c9a17a;
     padding: 0;
