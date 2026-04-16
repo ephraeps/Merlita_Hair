@@ -3,7 +3,7 @@ html {
     scroll-behavior: smooth;
 }
 .header {
-    background-color: black;
+    background-color: #0c0e18;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,7 +14,7 @@ html {
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 body {
@@ -36,10 +36,11 @@ body {
 }
 
 .title {
-    color: #dfd085;
+    color: #f5f1e8;
     font-size: 1.8rem; /* Réduction de la taille de la police pour les petits écrans */
     font-family: 'Dancing Script', cursive;
     margin-left: 10px;
+    font-weight: 500;
 }
 
 .navbar {
@@ -55,7 +56,7 @@ body {
 }
 
 .nav-link {
-    color: #dfd085;
+    color: #f5f1e8;
     text-decoration: none;
     padding: 8px 12px; /* Réduction des marges internes */
     border-radius: 25px;
@@ -65,17 +66,17 @@ body {
 }
 
 .nav-link:hover {
-    background-color: rgba(223, 208, 133, 0.2);
-    color: yellow;
+    background-color: rgba(201, 161, 122, 0.2);
+    color: #f5a623;
     transform: translateY(-3px);
-    box-shadow: 0 4px 6px rgba(223, 208, 133, 0.3);
+    box-shadow: 0 4px 6px rgba(201, 161, 122, 0.3);
 }
 
 .nav-link.active {
-    background-color: rgba(223, 208, 133, 0.3);
-    color: yellow;
+    background-color: rgba(201, 161, 122, 0.3);
+    color: #f5a623;
     font-weight: bold;
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid #c9a17a;
 }
 
 /* Responsive header styles */
@@ -85,7 +86,7 @@ body {
         margin-right: 0;
         font-size: 2rem;
         cursor: pointer;
-        color: #dfd085;
+        color: #f5f1e8;
         background: transparent;
         border: none;
         padding: 6px 10px;     /* padding raisonnable */
@@ -119,9 +120,9 @@ nav {
         top: 64px; /* ajuster selon la hauteur du header */
         left: 0;
         right: 0;
-        background: rgb(0, 0, 0);
+        background: #1a1f35;
         z-index: 1000;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
     .navbar {
