@@ -146,10 +146,8 @@ $username = $_SESSION['user_name'] ?? null;
       font-size: 2em;
     }
     @media screen  and (max-width: 768px) {
-      .greeting
-      {
-        font-size: 1.5em;
-        width: 100%;
+      .greeting {
+        font-size: 3.5em;
       }
       
       /* Minimize slider buttons on mobile */
