@@ -1,5 +1,5 @@
 <?php
-
+require('connexion.php');
 
 $username = $email = $city = $address = $phone = $password = $confirm_password = '';
 $errors = [];
@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Inscription - Merlita_Hair</title>
     <link rel="stylesheet" href="global_style.css">
 </head>
-<body>
+<body class="create_user-page">
     <div class="auth-container">
         <img src="logo_merlitahair.png" alt="Logo Merlita Hair" class="create_user-logo">
         <h2 class="auth-title">Créer un compte</h2>
