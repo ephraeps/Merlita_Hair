@@ -1,6 +1,6 @@
 <?php 
 require('check_auth.php');
-require('connexion.php'); 
+require('db.php'); 
 
 // Retrieve logged-in user record (to get `city` etc.)
 $user = null;
@@ -47,6 +47,15 @@ function resolveProductImage($productId) {
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
   <?php include('header.php');?>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W30GEKWKHN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W30GEKWKHN');
+</script>
 <body class="page-products">
 
   <?php if ($user && isset($user['city'])): 
