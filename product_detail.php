@@ -1,6 +1,6 @@
 <?php 
 require('check_auth.php');
-require('connexion.php');
+require('db.php');
 
 // Look through images
 function resolveProductImage($productId) {
