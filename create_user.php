@@ -1,5 +1,5 @@
 <?php
-require('connexion.php');
+require('db.php');
 
 $username = $email = $city = $address = $phone = $password = $confirm_password = '';
 $errors = [];
@@ -58,8 +58,237 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription - Merlita_Hair</title>
     <link rel="stylesheet" href="global_style.css">
+    <style>
+        .create_user-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-container {
+            width: 90%;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #1a1f35;
+            border: 2px solid #e8747e;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(201, 161, 122, 0.2);
+        }
+
+        .auth-container .form-group {
+            margin-bottom: 18px;
+        }
+
+        .auth-container .form-group select {
+            background-color: white;
+            color: #1a1f35;
+            cursor: pointer;
+            appearance: none;
+            padding-right: 35px;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        .create_user-logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 140px;
+            height: auto;
+        }
+
+        .auth-title {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .errors {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .errors p {
+            margin: 8px 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .errors p:first-child {
+            margin-top: 0;
+        }
+
+        .errors p:last-child {
+            margin-bottom: 0;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .auth-link {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .auth-container {
+                width: 95%;
+                margin: 30px auto;
+                padding: 25px 20px;
+                border-radius: 12px;
+            }
+
+            .create_user-logo {
+                width: 120px;
+                margin-bottom: 15px;
+            }
+
+            .auth-title {
+                font-size: 24px;
+                margin-bottom: 18px;
+            }
+
+            .auth-container .form-group {
+                margin-bottom: 16px;
+            }
+
+            .auth-container .form-group label {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .auth-container .form-group input,
+            .auth-container .form-group select {
+                font-size: 16px;
+                padding: 12px;
+                border-radius: 6px;
+            }
+
+            .errors {
+                padding: 12px;
+                margin-bottom: 18px;
+            }
+
+            .errors p {
+                font-size: 13px;
+                margin: 6px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .create_user-page {
+                padding: 20px 0;
+            }
+
+            .auth-container {
+                width: 100%;
+                margin: 20px 0;
+                padding: 20px 15px;
+                border-radius: 10px;
+                gap: 15px;
+            }
+
+            .create_user-logo {
+                width: 100px;
+                margin-bottom: 12px;
+            }
+
+            .auth-title {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+
+            .auth-container .form-group {
+                margin-bottom: 14px;
+            }
+
+            .auth-container .form-group label {
+                font-size: 12px;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .auth-container .form-group input,
+            .auth-container .form-group select {
+                font-size: 16px;
+                padding: 12px;
+                border-radius: 5px;
+                min-height: 44px;
+            }
+
+            .auth-btn {
+                padding: 12px;
+                font-size: 15px;
+                margin-top: 8px;
+                min-height: 44px;
+            }
+
+            .errors {
+                padding: 10px;
+                margin-bottom: 15px;
+                font-size: 12px;
+            }
+
+            .errors p {
+                font-size: 12px;
+                margin: 5px 0;
+            }
+
+            .auth-link {
+                font-size: 12px;
+                margin-top: 12px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="password"],
+            input[type="tel"],
+            select {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+        }
+
+        /* Tablet specific improvements */
+        @media (max-width: 768px) and (min-width: 481px) {
+            .auth-container {
+                width: 90%;
+                max-width: 450px;
+            }
+        }
+
+        /* Better focus states for accessibility */
+        .auth-container .form-group input:focus,
+        .auth-container .form-group select:focus {
+            outline: none;
+            border-color: #e8747e;
+            box-shadow: 0 0 8px rgba(201, 161, 122, 0.5);
+        }
+
+        /* Improved button interaction */
+        .auth-btn {
+            transition: all 0.3s ease;
+        }
+
+        .auth-btn:active {
+            transform: translateY(1px);
+        }
+    </style>
 </head>
 <body class="create_user-page">
     <div class="auth-container">
@@ -74,21 +303,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
         <?php endif; ?>
         
-        <form method="POST">
+        <form method="POST" class="create-form">
             <div class="form-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" name="username" placeholder="Entrez votre nom d'utilisateur" required autofocus>
+                <label for="username">Nom d'utilisateur *</label>
+                <input type="text" id="username" name="username" placeholder="ex: marie_beauty" required autofocus>
             </div>
             
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="exemple@email.com" required>
             </div>
             
             <div class="form-group">
-                <label for="city">Ville</label>
+                <label for="city">Ville *</label>
                 <select id="city" name="city" required>
-                    <option value="">-- Sélectionnez --</option>
+                    <option value="">-- Sélectionnez votre ville --</option>
                     <option value="matadi">Matadi</option>
                     <option value="kinshasa">Kinshasa</option>
                     <option value="mbanza-ngungu">Mbanza-Ngungu</option>
@@ -97,23 +326,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             </div>
 
             <div class="form-group">
-                <label for="address">Votre adresse</label>
-                <input type="text" id="address" name="address" required>
+                <label for="address">Votre adresse *</label>
+                <input type="text" id="address" name="address" placeholder="ex: Avenue de la Paix, n°45" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Mot de passe (8 caractères minimum)</label>
-                <input type="password" id="password" name="password" required minlength="8">
+                <label for="phone">Numéro de téléphone *</label>
+                <input type="tel" id="phone" name="phone" placeholder="0123456789" pattern="[0-9]{10}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mot de passe (8 caractères min) *</label>
+                <input type="password" id="password" name="password" placeholder="••••••••" required minlength="8">
             </div>
             
             <div class="form-group">
-                <label for="confirm_password">Confirmer le mot de passe</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Numéro de téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" pattern="[0-9]{10}" required>
+                <label for="confirm_password">Confirmer le mot de passe *</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="••••••••" required>
             </div>
             
             <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
