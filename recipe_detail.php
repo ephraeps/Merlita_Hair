@@ -1,6 +1,6 @@
 <?php
 
-require('connexion.php');
+require('db.php');
 
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
