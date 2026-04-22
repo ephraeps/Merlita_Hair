@@ -47,7 +47,7 @@
     </div>
 
     <div class="footer-bottom">
-        <p>&copy; 2026 Merlita Hair. Tous droits réservés.</p>
+        <p style=color:#FF2A97>&copy; 2026 Merlita Hair. Tous droits réservés.</p>
     </div>
 </footer>
 
@@ -55,11 +55,13 @@
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
     .modern-footer {
-        background-color: #1a1a1a;
-        color: #ffffff;
+        background-color: white;
+        color: #FF2A97;
         padding: 40px 0 20px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+    
+
 
     .footer-container {
         display: grid;
@@ -72,10 +74,11 @@
 
     .footer-section {
         margin-bottom: 25px;
+        color: #FF2A97;
     }
 
     .footer-section h3 {
-        color: #dfd085;
+        color: #FF2A97;
         font-size: 1.2rem;
         margin-bottom: 20px;
         position: relative;
@@ -89,7 +92,7 @@
         bottom: 0;
         width: 50px;
         height: 2px;
-        background-color: #dfd085;
+        background-color: #FF2A97;
     }
 
     .locations li {
@@ -99,7 +102,7 @@
     }
 
     .locations i {
-        color: #dfd085;
+        color: #FF2A97;
         margin-right: 10px;
     }
 
@@ -140,7 +143,7 @@
         margin-top: 30px;
         border-top: 1px solid #333;
         font-size: 0.9rem;
-        color: #aaa;
+        color: #FF2A97;
     }
 
     /* Responsive */
