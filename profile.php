@@ -1,8 +1,8 @@
 <?php
-session_start();
+
 error_log("Profile.php - Current session data: " . print_r($_SESSION, true));
 require('check_auth.php');
-require('connexion.php');
+require('db.php');
 
 // Ajout temporaire pour récupérer is_admin
 
