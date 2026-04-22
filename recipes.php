@@ -1,5 +1,5 @@
 <?php 
-require('connexion.php');
+require('db.php');
 
 // Récupérer toutes les catégories distinctes
 $cat_stmt = $db->prepare("SELECT DISTINCT category FROM recipes ORDER BY category ASC");
@@ -24,9 +24,18 @@ if ($selected_category) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merlita Hair - Recettes</title> 
-    <link rel="stylesheet" href="global_style.css">
+   
     <link rel="stylesheet" href="recipes_style.css">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W30GEKWKHN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W30GEKWKHN');
+</script>
 <body class="recipes_page">
     <?php include('header.php'); ?>
 
@@ -58,7 +67,7 @@ if ($selected_category) {
                         </div>
 
                         <div class="recipe_footer" style="text-align: right;">
-                            <a href="recipe_detail.php?id=<?= $recipe['id'] ?>" class="recipe-link">Voir plus</a>    
+                            <a href="recipe_detail.php?id=<?= $recipe['id'] ?>" class="recipe-link" style="color: #000000;">Voir plus</a>    
 
                         </div>    
                     </div>   
