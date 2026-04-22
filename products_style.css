@@ -33,10 +33,10 @@ body {
 
 /*Effet page active*/
 body.page-products .nav-link[href="products.php"] {
-    background-color: rgba(201, 161, 122, 0.3);
-    color: #f5a623;
+    background-color: rgba(232, 116, 126, 0.3);
+    color: #ff6b9d;
     font-weight: bold;
-    border-bottom: 2px solid #c9a17a;
+    border-bottom: 2px solid #e8747e;
     padding: 0;
     margin: 0;
 }
@@ -76,7 +76,7 @@ body.page-products .nav-link[href="products.php"] {
       
 } 
 .product_card {
-    border: 1px solid #c9a17a;
+    border: 1px solid #e8747e;
     padding: 16px;
     text-align: center;
     border-radius: 15px;
