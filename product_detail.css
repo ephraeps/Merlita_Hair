@@ -1,7 +1,7 @@
 body{
 
-    background-color: black;
-    color: #dfd085;
+    background-color: #f5f1e8;
+    color: #1a1f35;
     font-family: Arial, Helvetica, sans-serif;
 }
 .product_detail-page{
@@ -36,40 +36,46 @@ body{
 
 .product-price {
     font-size: 1.5rem;
-    color: yellow;
+    color: #e8747e;
     margin: 20px 0;
+    font-weight: 600;
 }
 
 .product-description {
     margin: 30px 0;
     padding: 20px;
-    border-top: 1px solid #dfd085;
-    border-bottom: 1px solid #dfd085;
+    border-top: 1px solid #e8747e;
+    border-bottom: 1px solid #e8747e;
+    color: #1a1f35;
 }
 .back-link{
     width:  175px;
-    color: black;
+    color: white;
     display: flex;
-    border: solid 1px #dfd085;
+    border: solid 1px #e8747e;
     border-radius: 35px;
     border-width: 20px;
-    background-color: #dfd085;
+    background-color: #e8747e;
     margin-bottom: 10px;
-
+    transition: all 0.3s ease;
 }
 
 .cart_btn{
     font-weight: bold;
     font-size: 25px;
-    background-color: black;
-    color: #dfd085;
-    border: solid 1px #dfd085;
-
+    background-color: #e8747e;
+    color: white;
+    border: solid 1px #e8747e;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 .cart_btn:hover{
-    color: #FFD700;
-    background-color:#003DA5;
-
+    color: white;
+    background-color: #d65268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(232, 116, 126, 0.3);
 }
 
 .product-comments {
@@ -80,8 +86,9 @@ body{
 
 .comment-body{
     display: flex;
-    border-bottom: solid 1px #dfd085;
+    border-bottom: solid 1px #e8747e;
     border-radius: 10%;
+    padding: 15px 0;
 }
 
 
@@ -90,9 +97,11 @@ body{
     min-height: 100px;
     margin: 10px;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #dfd085;
-    
+    background-color: rgba(232, 116, 126, 0.05);
+    border: 1px solid #e8747e;
+    border-radius: 4px;
+    color: #1a1f35;
+    font-family: Arial, sans-serif;
 }
 .comment_area{
     display: flex;
