@@ -13,6 +13,15 @@ $user_id = $_SESSION['user_id'] ?? null;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel = "stylesheet" href = "header_style.css">    
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W30GEKWKHN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-W30GEKWKHN');
+</script>
 <body>
     
 <header class="header">
