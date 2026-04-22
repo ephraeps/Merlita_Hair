@@ -1,7 +1,7 @@
 /* Style de base pour la page de détail */
 .recipe-detail-page {
-    background-color: #000;
-    color: #333;
+    background-color: #f5f1e8;
+    color: #1a1f35;
     line-height: 1.6;
 }
 
@@ -10,21 +10,24 @@
     margin: 2rem auto;
     padding: 1rem;
     background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(232, 116, 126, 0.15);
     border-radius: 8px;
+    border: 1px solid #e8747e;
 }
 
 .back-link {
     display: inline-block;
     margin-bottom: 1rem;
-    color: #6d4c41;
+    color: #e8747e;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .back-link:hover {
     text-decoration: underline;
-}   
+    color: #d65268;
+}
 
 .recipe-detail-header {
     text-align: center;
@@ -34,17 +37,18 @@
 }
 
 .recipe-detail-header h1 {
-    color: #6d4c41;
+    color: #1a1f35;
     margin-bottom: 0.5rem;
 }
 
 .recipe-category {
     display: inline-block;
-    background: #f5e9e0;
+    background: rgba(232, 116, 126, 0.15);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #6d4c41;
+    color: #1a1f35;
+    border: 1px solid #e8747e;
 }
 
 .recipe-detail-content section {
@@ -52,8 +56,8 @@
 }
 
 .recipe-detail-content h2 {
-    color: #6d4c41;
-    border-bottom: 1px solid #eee;
+    color: #1a1f35;
+    border-bottom: 1px solid #e8747e;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -76,17 +80,18 @@
 .recipe_comments {
     margin-top: 40px;
     padding: 25px;
-    background: #f8f9fa;
+    background: rgba(245, 241, 232, 0.98);
     border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(232, 116, 126, 0.1);
+    border: 1px solid #e8747e;
 }
 
 .recipe_comments h2 {
-    color: #333;
+    color: #1a1f35;
     font-size: 24px;
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid #e8747e;
 }
 
 /* Formulaire de commentaire */
