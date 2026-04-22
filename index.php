@@ -1,6 +1,6 @@
 <?php 
 require('check_auth.php');
-require('connexion.php');
+require('db.php');
 
 // Recover all valid images ,
 $imgb = $db->prepare("SELECT image,name FROM slideshow WHERE image IS NOT NULL AND image != '' ORDER BY add_at DESC");
@@ -164,16 +164,7 @@ $username = $_SESSION['user_name'] ?? null;
     }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W30GEKWKHN"></script>
-<script>
-  // Google Analytics tracking code
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-W30GEKWKHN');
-</script>
 <body class="page-home">  
   <div class="loader">
     <img src="logo_merlitahair.png" alt="logo_merlita_hair">
