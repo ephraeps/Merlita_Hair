@@ -88,12 +88,12 @@ input, select, textarea {
 
 input:focus, select:focus, textarea:focus {
     outline: none;
-    border-color: #c9a17a;
-    box-shadow: 0 0 5px rgba(201, 161, 122, 0.3);
+    border-color: #e8747e;
+    box-shadow: 0 0 5px rgba(232, 116, 126, 0.3);
 }
 
 button {
-    background-color: #c9a17a;
+    background-color: #e8747e;
     color: white;
     padding: 10px 15px;
     border: none;
@@ -104,7 +104,7 @@ button {
 }
 
 button:hover {
-    background-color: #b8935a;
+    background-color: #d65268;
 }
 
 .message {
@@ -177,7 +177,7 @@ th {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    border: #c9a17a solid 2px;
+    border: #e8747e solid 2px;
     border-radius: 15px;
     box-sizing: border-box;
     width: 100%;
@@ -216,8 +216,8 @@ th {
 }
 
 .auth-btn {
-    background-color: #c9a17a;
-    color: #1a1f35;
+    background-color: #e8747e;
+    color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -230,11 +230,11 @@ th {
 }
 
 .auth-btn:hover {
-    background-color: #d4b896;
+    background-color: #d65268;
 }
 
 .auth-btn:active {
-    background-color: #a68960;
+    background-color: #c93d5c;
 }
 
 .auth-link {
@@ -245,14 +245,14 @@ th {
 }
 
 .auth-link a {
-    color: #c9a17a;
+    color: #e8747e;
     text-decoration: none;
     font-weight: bold;
 }
 
 .auth-link a:hover {
     text-decoration: underline;
-    color: #d4b896;
+    color: #d65268;
 }
 
 .errors {
@@ -283,7 +283,7 @@ th {
     padding: 0;
     margin: 0;
     cursor: pointer;
-    accent-color: #c9a17a;
+    accent-color: #e8747e;
     width: 18px;
     height: 18px;
     min-width: 18px;
@@ -299,7 +299,7 @@ th {
 }
 
 .checkbox-group input[type="checkbox"]:focus {
-    outline: 2px solid #c9a17a;
+    outline: 2px solid #e8747e;
 }
 
 .confirmation-text {
