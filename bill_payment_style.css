@@ -1,0 +1,20 @@
+*{
+    background-color: #f5f1e8;
+    color: #1a1f35;
+}
+.confirm_btn{
+    background-color: #e8747e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.confirm_btn:hover {
+    background-color: #d65268;
+    color: white;
+}
